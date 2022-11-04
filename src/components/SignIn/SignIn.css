@@ -1,0 +1,79 @@
+
+  .title {
+    text-align: center;
+    width: 30vw;
+    background-color: red;
+    padding: 2vw 0vw;
+    border-radius: 10px 10px 0 0;
+    font-size: 2rem;
+    text-decoration: underline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  } 
+  .SignIn { 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 30vw;
+    padding: 1vw 1vw;
+    background-color: rgb(250, 194, 194);
+    border-radius: 0 0 10px 10px;
+  }
+  .login-form_input {
+    border: 1px solid rgb(172, 171, 171);
+    border-radius: 10px;
+    padding: 1vw 1vw;
+    outline: none;
+    margin: 5px;
+  }
+  .App {
+    text-align: center;
+    display: flex;
+    min-height: 89vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+  }
+  
+  .auth-form-container, .login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .auth-form-container {
+      padding: 5rem;
+      border: 1px solid white;
+      border-radius: 10px;
+      margin: 0.5rem;
+    }}
+  
+  label {
+    text-align: left;
+    padding: 0.25rem 0;
+  }
+  
+  .login-form_input{
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .lbutton {
+    border: none;
+    background-color: rgb(215, 26, 165);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff; 
+    font-size: larger;
+    margin-top: 20px;
+  }
+  
+  .link-btn {
+    background: none;
+    color: white;
+    text-decoration: underline;
+  }

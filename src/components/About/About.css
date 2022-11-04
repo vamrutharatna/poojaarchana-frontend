@@ -1,0 +1,71 @@
+.Acards {
+    padding: 4rem;
+    background: rgb(229, 206, 130);
+  }
+  
+  .Acards__container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  
+  .Acards__wrapper {
+    position: relative;
+    margin: 50px 0 45px;
+  }
+  
+  .Acards__items {
+    margin-bottom: 24px;
+  }
+  .Acards__item {
+    display: flex;
+    flex: 1;
+    margin: 0 1rem;
+    border-radius: 10px;
+    border-left: 2px solid #e0886b;
+  }
+
+
+
+  .Acards__item__info {
+    padding: 20px 30px 30px;
+  }
+  
+  .Acards__item__text {
+    color: #252e48;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .Acards__item__title {
+    color: #b75438;
+    font-size: 28px;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .content__blog__container {
+      width: 84%;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .Acards__items {
+      display: flex;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .Acards__item {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  
