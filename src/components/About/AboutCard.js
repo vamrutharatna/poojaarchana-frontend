@@ -2,7 +2,7 @@ import React from 'react';
 import './About.css';
 import AboutCardItem from './Aboutcarditem';
 
-function AboutCard() {
+function AboutCard() { 
   return (
     <div className='Acards'>
         <h1>About Us</h1>

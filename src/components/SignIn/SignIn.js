@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import './SignIn.css';
 
 const SignIn = (props) => {
@@ -22,7 +23,7 @@ const SignIn = (props) => {
                 <input className="login-form_input" value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button className="lbutton" type="submit">LogIn</button>
             </form>
-            <button className="link-btn lbutton" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
+            <Link className="link-btn lbutton" to='/signup'>Don't have an account? Register here.</Link>
         </div>
         </div>
         </>

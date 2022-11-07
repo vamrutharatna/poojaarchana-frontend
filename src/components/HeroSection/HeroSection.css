@@ -57,11 +57,19 @@
   margin-left: 4px;
 }
 
-@media screen and (max-width: 960px) {
+
+@media screen and (max-width: 1200px) {
   .hero-container > h1 {
     font-size: 70px;
     margin-top: -150px;
   }
+
+  .hero-container{
+    height: 50rem;
+    width: auto;
+  }
+
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -70,6 +78,10 @@
     margin-top: -100px;
   }
 
+  .hero-container{
+    height: 50rem;
+    width: auto;
+  }
   .hero-container > p {
     font-size: 30px;
   }
