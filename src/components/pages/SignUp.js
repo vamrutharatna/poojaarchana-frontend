@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../App.css';
-import SignIn from '../SignIn/SignIn';
+import SignUp from '../SignUp/SignUp';
 
 
-function SignUp() {
+function Signup() {
   return (
     <>
-      <SignIn />
+      <SignUp />
     </>
   );
 }
 
-export default SignUp;
+export default Signup;

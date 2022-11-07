@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './SignIn.css';
+import { Link } from "react-router-dom";
+import '../SignIn/SignIn.css';
 
 const SignUp = (props) => {
     const [username, setUsername] = useState('');
@@ -26,9 +27,9 @@ const SignUp = (props) => {
                 <input className="login-form_input" value={number} onChange={(e) => setNumber(e.target.value)}type="number" placeholder="Enter phone number" id="number" name="number" />
                 <label htmlFor="password">password</label>
                 <input className="login-form_input" value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-                <button className="lbutton" type="submit">Sign UP</button>
+                <button className="lbutton" type="submit">SignUp</button>
             </form>
-            <button className="link-btn lbutton" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
+            <Link className="link-btn lbutton" to='/signin'>Have an account? Login here.</Link>
         </div>
         </div>
         </>

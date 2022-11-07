@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import SearchBar from '../Search/SearchBar';
 
 
 function Navbar() {
@@ -13,7 +12,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
-    if (window.innerWidth <= 960) {
+    if (window.innerWidth <= 1110) {
       setButton(false);
     } else {
       setButton(true);
@@ -45,7 +44,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/services'
+                to='#'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -71,14 +70,17 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <div className='snav-links'>
-                <SearchBar />
-              </div>
-                
+              <Link
+                to='/search'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Search
+              </Link>
             </li>
             <li>
               <Link
-                to='/SignUp'
+                to='/signin'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
@@ -86,7 +88,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP/ SIGN IN</Button>}
+          {button && <Button onClick={closeMobileMenu} className='nav-links-mobile' buttonStyle='btn--outline'>SIGN UP/ SIGN IN</Button>}
         </div> 
       </nav>
     </>

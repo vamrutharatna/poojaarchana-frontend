@@ -4,9 +4,11 @@ import './App.css';
 import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Stories from './components/pages/Stories';
-import SignUp from './components/pages/SignUp';
+import Signin from './components/pages/SignIn';
 import Festivals from './components/pages/Festivals';
 import Temples from './components/pages/Temples';
+import Signup from './components/pages/SignUp';
+import Search from './components/pages/Search';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
           <Route path='/stories' component={Stories} />
           <Route path='/festivals' component={Festivals} />
           <Route path='/temples' component={Temples} />
-          <Route path='/sign-up' component={SignUp} />
+          <Route path='/signup' component={Signup} />
+          <Route path='/signin' component={Signin} />
+          <Route path='/search' component={Search} />
         </Switch>
       </Router>
     </>

@@ -77,3 +77,7 @@
     color: white;
     text-decoration: underline;
   }
+
+  .link-btn:hover{
+    color: #181514;
+  }
