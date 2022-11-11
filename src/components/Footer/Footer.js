@@ -1,9 +1,27 @@
-import React from 'react';
+import React ,{ useRef } from 'react';
 import './Footer.css';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
+import emailjs from 'emailjs-com';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure()
 function Footer() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_wk9dpfh', 'template_zd95c49', form.current, 'xyWg7OWM_BKJXmaXg')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      form.current.reset();
+      toast.success('Subscribe Sucessful!!')
+    };
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
@@ -14,14 +32,14 @@ function Footer() {
           You can unsubscribe at any time.
         </p>
         <div className='input-areas'>
-          <form>
+          <form ref={form} onSubmit={sendEmail}>
             <input
               className='footer-input'
               name='email'
               type='email'
               placeholder='Your Email'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <input className='sub_button' type="submit" value="Subscribe" />
           </form>
         </div>
       </section>
