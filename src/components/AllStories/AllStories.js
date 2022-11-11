@@ -1,73 +1,64 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './AllStories.css';// Tell webpack this JS file uses this image
 import AllStoriesCard from './AllStoriesCard';
+import { myAxios } from '../../services/Helper'
 
 function AllStories() {
-    
-    const recipeItem = {
-     
-      image: '.images/m1.jpg',
-      description:'This temple is constructed and maintained by ISKCON.The "darshan mandap"  at Hare Krishna Land is tastefully decorated utilizing several forms of traditional Indian art.The idols are placed on exquisitely carved wooden "simhasanas", which were carved by a team of artists from Jaipur. These wooden simhasanas sit upon carved marble platforms. This temple is constructed and maintained by ISKCON.The "darshan mandap"  at Hare Krishna Land is tastefully decorated utilizing several forms of traditional Indian art.The idols are placed on exquisitely carved wooden "simhasanas", which were carved by a team of artists from Jaipur. These wooden simhasanas sit upon carved marble platforms. This temple is constructed and maintained by ISKCON.The "darshan mandap"  at Hare Krishna Land is tastefully decorated utilizing several forms of traditional Indian art.The idols are placed on exquisitely carved wooden "simhasanas", which were carved by a team of artists from Jaipur. These wooden simhasanas sit upon carved marble platforms.This temple is constructed and maintained by ISKCON.The "darshan mandap"  at Hare Krishna Land is tastefully decorated utilizing several forms of traditional Indian art.The idols are placed on exquisitely carved wooden "simhasanas", which were carved by a team of artists from Jaipur. These wooden simhasanas sit upon carved marble platforms'
 
+  // const [post, setPost] = React.useState(null);
+  // React.useEffect(() => {
+  //   axios.get("http://localhost:8081/category/all").then((response) => {
+  //     setPost(response.data);
+
+  //     console.log(response.data);
+  //   });
+  // }, []);
+
+
+  const [story, setStory] = useState([]);
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const { data } = await myAxios.get("/story/all");
+        setStory(data);
+      } catch (err) {
+        console.error(err);
+      }
     };
-  
-    const like= 193;
-    const isLiked = true;
+    fetch();
+  }, []);
 
+  return (
+    <div className='ncards'>
+      <h1>Mythology Stories</h1>
+      <div className='cards__container'>
+        <div className='scards__wrapper'>
+          <ul className='scards__items'>
 
-    return (
-        <div className='ncards'>
-            <h1>All Stories</h1>
-          <div className='cards__container'>
-            <div className='scards__wrapper'>
-              <ul className='scards__items'>
-                <AllStoriesCard
-                 description={recipeItem.description}
-                 liked={isLiked}
-                 likeCount={like}
-                />
+            {story.map((index, el) => {
 
-                <AllStoriesCard
-                 description={recipeItem.description}
-                 liked={isLiked}
-                 likeCount={like}
-                />
+              return <AllStoriesCard storyTitle={index.title} />
 
-                <AllStoriesCard
-                 description={recipeItem.description}
-                 liked={isLiked}
-                 likeCount={like}
-                />
-
-                <AllStoriesCard
-                 description={recipeItem.description}
-                 liked={isLiked}
-                 likeCount={like}
-                />
-                <AllStoriesCard
-                 description={recipeItem.description}
-                 liked={isLiked}
-                 likeCount={like}
-                />
-                <AllStoriesCard
-                 description={recipeItem.description}
-                 liked={isLiked}
-                 likeCount={like}
-                />
-                <AllStoriesCard
-                 description={recipeItem.description}
-                 liked={isLiked}
-                 likeCount={like}
-                />
-              </ul>
-            </div>
-          </div>
+              // console.log(el.category);
+              // if (index.id === 7) {
+              //   return <AllStoriesCard
+              //     categoryTitle={index.title}
+              //   // description={el.categoryDescription}
+              //   />
+              // }
+              // else if (index.id === 4) {
+              //   return <AllStoriesCard
+              //     categoryTitle={index.title}
+              //   // description={el.categoryDescription}
+              //   />
+              // }
+            })
+            }
+          </ul>
         </div>
-      );
-  }
- 
-  export default AllStories;
+      </div>
+    </div>
+  );
+}
 
-
-
+export default AllStories;
