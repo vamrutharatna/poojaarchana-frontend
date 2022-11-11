@@ -59,7 +59,7 @@ const SignUp = (props) => {
                     name: "",
                     email: "",
                     password: "",
-                    about: "",
+                    contact: "",
                 });
             })
             .catch((error) => {
@@ -149,7 +149,7 @@ const SignUp = (props) => {
                             id="number"
                             name="number"
                             onChange={(e) => handleChange(e, "contact")}
-                            value={data.about}
+                            value={data.contact}
                             invalid={
                                 error.errors?.response?.data?.about ? true : false
                             }
