@@ -1,0 +1,20 @@
+
+.epcontent{
+    background-color: aqua;
+    height: 100%;
+    width: 100%;
+}
+
+.left_epcontent{
+    width: 5%;
+    height: 100%;
+    background-color: aquamarine;
+    float: left;
+}
+
+.right_epcontent{
+    width: 90%;
+    height: 100%;
+    background-color:blue;
+    float: right;
+}

@@ -29,36 +29,52 @@ function AllStories() {
   }, []);
 
   return (
-    <div className='ncards'>
-      <h1>Mythology Stories</h1>
-      <div className='cards__container'>
+    <div className='scards'>
+        <h1>All Stories</h1>
+      <div className='scards__container'>
         <div className='scards__wrapper'>
-          <ul className='scards__items'>
+        {story.map((index, el) => {
 
-            {story.map((index, el) => {
+            return <AllStoriesCard storyTitle={index.title} />
 
-              return <AllStoriesCard storyTitle={index.title} />
-
-              // console.log(el.category);
-              // if (index.id === 7) {
-              //   return <AllStoriesCard
-              //     categoryTitle={index.title}
-              //   // description={el.categoryDescription}
-              //   />
-              // }
-              // else if (index.id === 4) {
-              //   return <AllStoriesCard
-              //     categoryTitle={index.title}
-              //   // description={el.categoryDescription}
-              //   />
-              // }
+            // console.log(el.category);
+            // if (index.id === 7) {
+            //   return <AllStoriesCard
+            //     categoryTitle={index.title}
+            //   // description={el.categoryDescription}
+            //   />
+            // }
+            // else if (index.id === 4) {
+            //   return <AllStoriesCard
+            //     categoryTitle={index.title}
+            //   // description={el.categoryDescription}
+            //   />
+            // }
             })
             }
-          </ul>
+            <AllStoriesCard
+              title="Ramayana"
+              description="The Tale of Rama and Seetha....."
+              path="/episodes"
+            />
+            <AllStoriesCard
+              title="MahaBharat"
+              description="The War between good and bad....."
+            />
+            <AllStoriesCard
+              title="BhagavadGita"
+              description="Slokas....."
+            />
+            <AllStoriesCard
+              title="RadhaKrishna"
+              description="The Tale of Radha and Krishna....."
+            />
         </div>
       </div>
     </div>
   );
 }
+
+  
 
 export default AllStories;

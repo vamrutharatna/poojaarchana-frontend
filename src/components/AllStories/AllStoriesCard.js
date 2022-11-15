@@ -2,42 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import './AllStories.css';
 import { Link } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap';
 import axios from "axios";
 
 function AllStoriesCard(props) {
 
     return (
-        <Link className='Stories-Link'>
-            <div className="card">
-
-                <img className="card-image" src="./images/m1.jpg" alt="Logo" />
-
-                <div className="content">
-                    <div className="story-card-stacked">
-
-                        <div className="story-card-header">
-                            <div className="e-card-header-title"><h2>{props.storyTitle}</h2></div>
-                        </div>
-
-                        <div className="e-card-content">
-                            {props.storyDescription}
-                        </div>
-                    </div>
-
-                    <div className="card-like-bar">
-                        {props.liked ? (
-                            <i class='fas fa-heart'></i>
-                        ) : (
-                            <i class='fas fa-heart-o'></i>
-                        )}
-                        <div className="like-text">
-                            <b>{props.likeCount}</b>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </Link>
+        <Card style={{ width: '18rem',  height :'12rem' ,background: 'linear-gradient(65deg, #7439db, #C66FBC 48%, #F7944D)'}}>
+        <Card.Body >
+          <Card.Title className='s_title'>{props.title}</Card.Title>
+          <Card.Text style={{height :'5rem'}}>
+            {props.description}
+          </Card.Text>
+          <Link to={props.path}><button type="button" className='e_button btn btn-light'>Episodes</button></Link>
+        </Card.Body>
+      </Card>
     );
 }
 
